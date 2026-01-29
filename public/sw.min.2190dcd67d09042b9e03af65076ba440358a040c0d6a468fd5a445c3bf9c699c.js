@@ -1,0 +1,1 @@
+navigator.serviceWorker&&navigator.serviceWorker.register("/forevertyp/forevertyp.github.io/sw.js",{scope:"/forevertyp/forevertyp.github.io/"})

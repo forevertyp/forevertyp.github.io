@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo Book</title>
-    <link>http://localhost:1313/forevertyp/forevertyp.github.io/</link>
+    <link>http://localhost:1313/forevertyp/forevertyp.github.io/zh/</link>
     <description>Recent content on Hugo Book</description>
     <generator>Hugo</generator>
-    <language>en</language>
+    <language>zh</language>
     <copyright>[© CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)</copyright>
-    <atom:link href="http://localhost:1313/forevertyp/forevertyp.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/forevertyp/forevertyp.github.io/zh/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
