@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo Book</title>
+    <title>复利实验室</title>
     <link>http://localhost:1313/forevertyp/forevertyp.github.io/</link>
-    <description>Recent content on Hugo Book</description>
+    <description>Recent content on 复利实验室</description>
     <generator>Hugo</generator>
-    <language>en</language>
-    <copyright>[© CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)</copyright>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 29 Jan 2026 21:43:38 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/forevertyp/forevertyp.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello</title>
+      <link>http://localhost:1313/forevertyp/forevertyp.github.io/posts/hello/</link>
+      <pubDate>Thu, 29 Jan 2026 19:55:34 +0800</pubDate>
+      <guid>http://localhost:1313/forevertyp/forevertyp.github.io/posts/hello/</guid>
+      <description>&lt;h1 id=&#34;大标题&#34;&gt;大标题&lt;a class=&#34;anchor&#34; href=&#34;#%e5%a4%a7%e6%a0%87%e9%a2%98&#34;&gt;#&lt;/a&gt;&lt;/h1&gt;&#xD;&#xA;&lt;h2 id=&#34;主要章节&#34;&gt;主要章节&lt;a class=&#34;anchor&#34; href=&#34;#%e4%b8%bb%e8%a6%81%e7%ab%a0%e8%8a%82&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xD;&#xA;&lt;h3 id=&#34;子章节&#34;&gt;子章节&lt;a class=&#34;anchor&#34; href=&#34;#%e5%ad%90%e7%ab%a0%e8%8a%82&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;&#xD;&#xA;&lt;h4 id=&#34;子子章节&#34;&gt;子子章节&lt;a class=&#34;anchor&#34; href=&#34;#%e5%ad%90%e5%ad%90%e7%ab%a0%e8%8a%82&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;&#xD;&#xA;&lt;h2 id=&#34;主要章节-1&#34;&gt;主要章节&lt;a class=&#34;anchor&#34; href=&#34;#%e4%b8%bb%e8%a6%81%e7%ab%a0%e8%8a%82-1&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;&lt;strong&gt;分模块学&lt;/strong&gt; &lt;em&gt;分模块学习是指将一个大的学习任务分解成多个小的模块，每个模块都有自己的学习内容和学习目标。&lt;/em&gt;&#xA;&lt;strong&gt;不应该&lt;/strong&gt; &lt;del&gt;将一个大的学习任务分解成多个大的模块，每个模块都有自己的学习内容和学习目标。&lt;/del&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;printf(&amp;quot;Hello, World!\n&amp;quot;);&lt;/code&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;学习 hugo&lt;/li&gt;&#xA;&lt;li&gt;掌握 markdown&lt;/li&gt;&#xA;&lt;li&gt;坚持记笔记&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;why&lt;/li&gt;&#xA;&lt;li&gt;分模块学习的好处是可以更有效地管理学习时间和精力，同时也可以更轻松地理解和记忆知识。&lt;/li&gt;&#xA;&lt;li&gt;分模块学习的另一个好处是可以更方便地分享和交流知识。当你完成一个模块的学习后，你可以将其分享给他人，或者与他人进行交流，从而更有效地学习和理解知识。&lt;/li&gt;&#xA;&lt;li&gt;分模块学习的最后一个好处是可以更方便地进行学习进度的跟踪和管理。当你完成一个模块的学习后，你可以记录下你的学习进度，从而更方便地跟踪和管理你的学习进度。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;blockquote class=&#39;book-hint &#39;&gt;&#xD;&#xA;&lt;p&gt;名人名言：“分模块学习是一种有效的学习方法，它可以帮助你更有效地管理学习时间和精力，同时也可以更轻松地理解和记忆知识。”&#xA;&amp;ndash; 宇平&lt;/p&gt;&#xA;&lt;/blockquote&gt;&lt;p&gt;&lt;a href=&#34;https://www.zhihu.com&#34;&gt;分模块学习的好处&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://x-design-static-release.stariicloud.com/poster/c5a9d2df7201a14dfe8e7368fad0f809.jpg&#34; alt=&#34;分模块学习的好处&#34; /&gt;&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hello world &lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cheer up everyday&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;&#xA;&lt;li&gt;[] 分模块学习的好处是可以更有效地管理学习时间和精力，同时也可以更轻松地理解和记忆知识。&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 分模块学习的另一个好处是可以更方便地分享和交流知识。当你完成一个模块的学习后，你可以将其分享给他人，或者与他人进行交流，从而更有效地学习和理解知识。&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
   </channel>
 </rss>

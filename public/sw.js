@@ -1,18 +1,18 @@
 const cacheName = self.location.pathname
 const pages = [
 
-  "/forevertyp/forevertyp.github.io/categories/",
-  "/forevertyp/forevertyp.github.io/zh/categories/",
-  "/forevertyp/forevertyp.github.io/he/categories/",
-  "/forevertyp/forevertyp.github.io/",
-  "/forevertyp/forevertyp.github.io/zh/",
-  "/forevertyp/forevertyp.github.io/he/",
-  "/forevertyp/forevertyp.github.io/tags/",
-  "/forevertyp/forevertyp.github.io/zh/tags/",
-  "/forevertyp/forevertyp.github.io/he/tags/",
-  "/forevertyp/forevertyp.github.io/book.min.cc2c524ed250aac81b23d1f4af87344917b325208841feca0968fe450f570575.css",
-  "/forevertyp/forevertyp.github.io/en.search-data.min.4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945.json",
-  "/forevertyp/forevertyp.github.io/en.search.min.98b8829e0b18232f2a55363620a645490e66516ce620b62774b8f7777ba8a47a.js",
+  "/hugo-book/categories/",
+  "/hugo-book/zh/categories/",
+  "/hugo-book/he/categories/",
+  "/hugo-book/",
+  "/hugo-book/zh/",
+  "/hugo-book/he/",
+  "/hugo-book/tags/",
+  "/hugo-book/zh/tags/",
+  "/hugo-book/he/tags/",
+  "/hugo-book/book.min.cc2c524ed250aac81b23d1f4af87344917b325208841feca0968fe450f570575.css",
+  "/hugo-book/en.search-data.min.4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945.json",
+  "/hugo-book/en.search.min.66b0dc3697cc17ef7f8a98bc6c0d8ca5eabb59ade1b1d6cd4fe49952e8816e86.js",
   
 ];
 

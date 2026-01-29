@@ -1,0 +1,25 @@
+# 1.基础信息
+baseURL = 'https://github.com/forevertyp/forevertyp.github.io/'
+languageCode = 'zh-cn'
+title = '复利实验室'
+theme = 'hugo-book'
+
+#内容配置：让Hugo自动追踪我的学习时间
+[frontmatter]
+  lastmod = [":git","lastmod",":fileModTime","publishData","date"]
+
+[[menu.main]]
+  name = '首页'
+  url = '/'
+  weight = 20
+
+[[menu.main]]
+  name = '学习笔记'
+  url  = '/posts/'
+  weight = 20
+
+[[menu.main]]
+  name = '关于我'
+  url = '/about/'
+  weight = 30
+

@@ -2,55 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/forevertyp/forevertyp.github.io/categories/</loc>
+    <loc>http://localhost:1313/hugo-book/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="http://localhost:1313/forevertyp/forevertyp.github.io/zh/categories/"
+                href="http://localhost:1313/hugo-book/zh/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="he"
-                href="http://localhost:1313/forevertyp/forevertyp.github.io/he/categories/"
+                href="http://localhost:1313/hugo-book/he/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/forevertyp/forevertyp.github.io/categories/"
+                href="http://localhost:1313/hugo-book/categories/"
                 />
   </url><url>
-    <loc>http://localhost:1313/forevertyp/forevertyp.github.io/</loc>
+    <loc>http://localhost:1313/hugo-book/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="http://localhost:1313/forevertyp/forevertyp.github.io/zh/"
+                href="http://localhost:1313/hugo-book/zh/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="he"
-                href="http://localhost:1313/forevertyp/forevertyp.github.io/he/"
+                href="http://localhost:1313/hugo-book/he/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/forevertyp/forevertyp.github.io/"
+                href="http://localhost:1313/hugo-book/"
                 />
   </url><url>
-    <loc>http://localhost:1313/forevertyp/forevertyp.github.io/tags/</loc>
+    <loc>http://localhost:1313/hugo-book/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="http://localhost:1313/forevertyp/forevertyp.github.io/zh/tags/"
+                href="http://localhost:1313/hugo-book/zh/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="he"
-                href="http://localhost:1313/forevertyp/forevertyp.github.io/he/tags/"
+                href="http://localhost:1313/hugo-book/he/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/forevertyp/forevertyp.github.io/tags/"
+                href="http://localhost:1313/hugo-book/tags/"
                 />
   </url>
 </urlset>
