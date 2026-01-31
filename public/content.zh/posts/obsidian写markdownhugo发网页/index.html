@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+<head><script src="/forevertyp/forevertyp.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=forevertyp/forevertyp.github.io/livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content=" # =============== Hugo 必填字段 =============== title: &#34;Obsidian 管理 Hugo Markdown 的避坑清单&#34; date: 2026-01-30T10:00:00&#43;08:00 draft: false # 写完改成 false 才发布 slug: obsidian-hugo-cheat-sheet # 可选，固定链接 url: /post/obsidian-hugo-cheat-sheet/ # 可选，覆盖默认路径 # =============== Hugo 可选字段 =============== tags: [&#34;Obsidian&#34;, &#34;Hugo&#34;, &#34;Markdown&#34;] categories: [&#34;工具&#34;] summary: &#34;一张模板搞定 Obsidian 与 Hugo 共用 Markdown 的全部坑点。&#34; # cover: ./cover.jpg # 若用 page-bundle，封面图放同目录1. Obsidian 端必改 3 个设置#设置 → 文件与链接 → 关闭“使用 WikiLinks” 同一面板 → 新建链接格式 → 选“相对路径” 默认附件位置 → 选“同文件夹”（配合 Hugo page-bundle） 记得把 .obsidian/workspace.json 写进 .gitignore，避免多人冲突。
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/forevertyp/forevertyp.github.io/content.zh/posts/obsidian%E5%86%99markdownhugo%E5%8F%91%E7%BD%91%E9%A1%B5/">
+  <meta property="og:site_name" content="复利实验室">
+  <meta property="og:title" content="复利实验室">
+  <meta property="og:description" content="# =============== Hugo 必填字段 =============== title: &#34;Obsidian 管理 Hugo Markdown 的避坑清单&#34; date: 2026-01-30T10:00:00&#43;08:00 draft: false # 写完改成 false 才发布 slug: obsidian-hugo-cheat-sheet # 可选，固定链接 url: /post/obsidian-hugo-cheat-sheet/ # 可选，覆盖默认路径 # =============== Hugo 可选字段 =============== tags: [&#34;Obsidian&#34;, &#34;Hugo&#34;, &#34;Markdown&#34;] categories: [&#34;工具&#34;] summary: &#34;一张模板搞定 Obsidian 与 Hugo 共用 Markdown 的全部坑点。&#34; # cover: ./cover.jpg # 若用 page-bundle，封面图放同目录1. Obsidian 端必改 3 个设置#设置 → 文件与链接 → 关闭“使用 WikiLinks” 同一面板 → 新建链接格式 → 选“相对路径” 默认附件位置 → 选“同文件夹”（配合 Hugo page-bundle） 记得把 .obsidian/workspace.json 写进 .gitignore，避免多人冲突。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="content.zh">
+    <meta property="article:modified_time" content="2026-01-30T21:03:48+08:00">
+
+
+  <meta itemprop="name" content="复利实验室">
+  <meta itemprop="description" content="# =============== Hugo 必填字段 =============== title: &#34;Obsidian 管理 Hugo Markdown 的避坑清单&#34; date: 2026-01-30T10:00:00&#43;08:00 draft: false # 写完改成 false 才发布 slug: obsidian-hugo-cheat-sheet # 可选，固定链接 url: /post/obsidian-hugo-cheat-sheet/ # 可选，覆盖默认路径 # =============== Hugo 可选字段 =============== tags: [&#34;Obsidian&#34;, &#34;Hugo&#34;, &#34;Markdown&#34;] categories: [&#34;工具&#34;] summary: &#34;一张模板搞定 Obsidian 与 Hugo 共用 Markdown 的全部坑点。&#34; # cover: ./cover.jpg # 若用 page-bundle，封面图放同目录1. Obsidian 端必改 3 个设置#设置 → 文件与链接 → 关闭“使用 WikiLinks” 同一面板 → 新建链接格式 → 选“相对路径” 默认附件位置 → 选“同文件夹”（配合 Hugo page-bundle） 记得把 .obsidian/workspace.json 写进 .gitignore，避免多人冲突。">
+  <meta itemprop="dateModified" content="2026-01-30T21:03:48+08:00">
+  <meta itemprop="wordCount" content="99">
+
+<title>Obsidian写markdown,hugo发网页 | 复利实验室</title>
+<link rel="icon" href="/forevertyp/forevertyp.github.io/favicon.png" >
+<link rel="manifest" href="/forevertyp/forevertyp.github.io/manifest.json">
+<link rel="canonical" href="http://localhost:1313/forevertyp/forevertyp.github.io/content.zh/posts/obsidian%E5%86%99markdownhugo%E5%8F%91%E7%BD%91%E9%A1%B5/">
+<link rel="stylesheet" href="/forevertyp/forevertyp.github.io/book.min.cc2c524ed250aac81b23d1f4af87344917b325208841feca0968fe450f570575.css" integrity="sha256-zCxSTtJQqsgbI9H0r4c0SRezJSCIQf7KCWj&#43;RQ9XBXU=" crossorigin="anonymous">
+
+
+  <script defer src="/forevertyp/forevertyp.github.io/fuse.min.js"></script>
+  <script defer src="/forevertyp/forevertyp.github.io/en.search.min.aa467bfce2a3679a893dbcec8a6828956fb1c03c688d88154e06df04c8600878.js" integrity="sha256-qkZ7/OKjZ5qJPbzsimgolW&#43;xwDxojYgVTgbfBMhgCHg=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-content.zh">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/forevertyp/forevertyp.github.io/"><span>复利实验室</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ul><li><a href="/forevertyp/forevertyp.github.io/content.en/posts/" title="Blogs">Blogs</a></li></ul>
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/forevertyp/forevertyp.github.io/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Obsidian写markdown,hugo发网页</h3>
+
+  <label for="toc-control">
+    
+    <img src="/forevertyp/forevertyp.github.io/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-obsidian-端必改-3-个设置">1. Obsidian 端必改 3 个设置</a></li>
+    <li><a href="#2-图片示例page-bundle-模式">2. 图片示例（page-bundle 模式）</a></li>
+    <li><a href="#3-内部链接示例">3. 内部链接示例</a></li>
+    <li><a href="#4-代码块高亮">4. 代码块高亮</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ===============  Hugo 必填字段  ===============
+</span></span></span><span style="display:flex;"><span>title: <span style="color:#e6db74">&#34;Obsidian 管理 Hugo Markdown 的避坑清单&#34;</span>
+</span></span><span style="display:flex;"><span>date: <span style="color:#ae81ff">2026</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span><span style="color:#f92672">-</span><span style="color:#ae81ff">30</span>T10:<span style="color:#ae81ff">00</span><span style="color:#f92672">:</span><span style="color:#ae81ff">00</span><span style="color:#f92672">+</span><span style="color:#ae81ff">08</span><span style="color:#f92672">:</span><span style="color:#ae81ff">00</span>
+</span></span><span style="display:flex;"><span>draft: false            <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#960050;background-color:#1e0010">写完改成</span> false <span style="color:#960050;background-color:#1e0010">才发布</span>
+</span></span><span style="display:flex;"><span>slug: obsidian<span style="color:#f92672">-</span>hugo<span style="color:#f92672">-</span>cheat<span style="color:#f92672">-</span>sheet   <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#960050;background-color:#1e0010">可选，固定链接</span>
+</span></span><span style="display:flex;"><span>url: <span style="color:#f92672">/</span>post<span style="color:#f92672">/</span>obsidian<span style="color:#f92672">-</span>hugo<span style="color:#f92672">-</span>cheat<span style="color:#f92672">-</span>sheet<span style="color:#f92672">/</span>   <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#960050;background-color:#1e0010">可选，覆盖默认路径</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ===============  Hugo 可选字段  ===============
+</span></span></span><span style="display:flex;"><span>tags: [<span style="color:#e6db74">&#34;Obsidian&#34;</span>, <span style="color:#e6db74">&#34;Hugo&#34;</span>, <span style="color:#e6db74">&#34;Markdown&#34;</span>]
+</span></span><span style="display:flex;"><span>categories: [<span style="color:#e6db74">&#34;工具&#34;</span>]
+</span></span><span style="display:flex;"><span>summary: <span style="color:#e6db74">&#34;一张模板搞定 Obsidian 与 Hugo 共用 Markdown 的全部坑点。&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># cover: ./cover.jpg      # 若用 page-bundle，封面图放同目录</span></span></span></code></pre></div><!--  以下内容同时兼容 Obsidian 与 Hugo  -->
+<!--  1. 关闭 Wikilink、图片放同目录、链接用标准 Markdown  -->
+<!--  2. 行尾换行打两个空格或回车两次，否则 Hugo 不识别  -->
+<h2 id="1-obsidian-端必改-3-个设置">1. Obsidian 端必改 3 个设置<a class="anchor" href="#1-obsidian-%e7%ab%af%e5%bf%85%e6%94%b9-3-%e4%b8%aa%e8%ae%be%e7%bd%ae">#</a></h2>
+<ol>
+<li>设置 → 文件与链接 → <strong>关闭</strong>“使用 WikiLinks”</li>
+<li>同一面板 → 新建链接格式 → 选“相对路径”</li>
+<li>默认附件位置 → 选“同文件夹”（配合 Hugo page-bundle）</li>
+</ol>
+<blockquote class='book-hint '>
+<p>记得把 <code>.obsidian/workspace.json</code> 写进 <code>.gitignore</code>，避免多人冲突。</p>
+</blockquote><h2 id="2-图片示例page-bundle-模式">2. 图片示例（page-bundle 模式）<a class="anchor" href="#2-%e5%9b%be%e7%89%87%e7%a4%ba%e4%be%8bpage-bundle-%e6%a8%a1%e5%bc%8f">#</a></h2>
+<p><code>![示例图片](./demo.png)  </code></p>
+<!-- 图片与 index.md 同目录，Hugo 生成后路径自动正确 -->
+<h2 id="3-内部链接示例">3. 内部链接示例<a class="anchor" href="#3-%e5%86%85%e9%83%a8%e9%93%be%e6%8e%a5%e7%a4%ba%e4%be%8b">#</a></h2>
+<p><code>请阅读[另一篇文章](./2025-12-31-example.md)。</code></p>
+<!-- 标准 Markdown 链接，两边都能跳转；不要用 [[xxx]] -->
+<h2 id="4-代码块高亮">4. 代码块高亮<a class="anchor" href="#4-%e4%bb%a3%e7%a0%81%e5%9d%97%e9%ab%98%e4%ba%ae">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Hello from Obsidian → Hugo!&#34;</span>)
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-obsidian-端必改-3-个设置">1. Obsidian 端必改 3 个设置</a></li>
+    <li><a href="#2-图片示例page-bundle-模式">2. 图片示例（page-bundle 模式）</a></li>
+    <li><a href="#3-内部链接示例">3. 内部链接示例</a></li>
+    <li><a href="#4-代码块高亮">4. 代码块高亮</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

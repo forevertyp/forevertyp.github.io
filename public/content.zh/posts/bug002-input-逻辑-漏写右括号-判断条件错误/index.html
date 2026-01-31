@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+<head><script src="/forevertyp/forevertyp.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=forevertyp/forevertyp.github.io/livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content=" 🐛 Bug 002#Input-逻辑-漏写右括号-scanf判断条件错误
+📌 基本信息#日期：2026-01-26 类型：#C语言 #Bug #逻辑错误 场景：tic-tac-toe棋盘游戏 难度感受：⭐️⭐️⭐️⭐️⭐️ 💥 错误表现#错误类型：逻辑错误 报错信息（原样粘贴）： 无编译错误，但程序在读取棋盘数据时判断条件异常，行为不符合预期。 🧪 出错代码#if (scanf(&#34;%d&#34;, &amp;board[i][j]) != 1) { // 错误处理 } ***🧠 错误原因（⚠️最重要）#根本原因：
+忘记在 scanf 参数后补上右括号 )，导致比较运算 != 1 被错误地放进了参数中。
+当时的错误想法：
+以为自己写的是“判断 scanf 返回值是否不等于 1”，没有意识到括号少写了一边。
+哪一步开始想歪了：
+在快速敲代码时默认相信“自己括号是成对的”，没有再用眼睛逐字符检查条件表达式。
+✅ 正确做法#if (scanf(&#34;%d&#34;, &amp;board[i][j]) != 1) { // 错误处理 } 关键点说明：#scanf 的返回值才应该和 1 作比较
+比较运算 一定写在函数调用外面
+少一个括号，代码仍然合法，但语义完全改变
+🚩 教训总结（一句话)#以后只要看到 scanf(...) != 1，立刻想到 先检查括号是否完整
+🔁 如何避免再次犯错#条件语句逐字符检查括号是否成对
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/forevertyp/forevertyp.github.io/content.zh/posts/bug002-input-%E9%80%BB%E8%BE%91-%E6%BC%8F%E5%86%99%E5%8F%B3%E6%8B%AC%E5%8F%B7-%E5%88%A4%E6%96%AD%E6%9D%A1%E4%BB%B6%E9%94%99%E8%AF%AF/">
+  <meta property="og:site_name" content="复利实验室">
+  <meta property="og:title" content="复利实验室">
+  <meta property="og:description" content="🐛 Bug 002#Input-逻辑-漏写右括号-scanf判断条件错误
+📌 基本信息#日期：2026-01-26 类型：#C语言 #Bug #逻辑错误 场景：tic-tac-toe棋盘游戏 难度感受：⭐️⭐️⭐️⭐️⭐️ 💥 错误表现#错误类型：逻辑错误 报错信息（原样粘贴）： 无编译错误，但程序在读取棋盘数据时判断条件异常，行为不符合预期。 🧪 出错代码#if (scanf(&#34;%d&#34;, &amp;board[i][j]) != 1) { // 错误处理 } ***🧠 错误原因（⚠️最重要）#根本原因：
+忘记在 scanf 参数后补上右括号 )，导致比较运算 != 1 被错误地放进了参数中。
+当时的错误想法：
+以为自己写的是“判断 scanf 返回值是否不等于 1”，没有意识到括号少写了一边。
+哪一步开始想歪了：
+在快速敲代码时默认相信“自己括号是成对的”，没有再用眼睛逐字符检查条件表达式。
+✅ 正确做法#if (scanf(&#34;%d&#34;, &amp;board[i][j]) != 1) { // 错误处理 } 关键点说明：#scanf 的返回值才应该和 1 作比较
+比较运算 一定写在函数调用外面
+少一个括号，代码仍然合法，但语义完全改变
+🚩 教训总结（一句话)#以后只要看到 scanf(...) != 1，立刻想到 先检查括号是否完整
+🔁 如何避免再次犯错#条件语句逐字符检查括号是否成对">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="content.zh">
+    <meta property="article:modified_time" content="2026-01-30T20:35:23+08:00">
+
+
+  <meta itemprop="name" content="复利实验室">
+  <meta itemprop="description" content="🐛 Bug 002#Input-逻辑-漏写右括号-scanf判断条件错误
+📌 基本信息#日期：2026-01-26 类型：#C语言 #Bug #逻辑错误 场景：tic-tac-toe棋盘游戏 难度感受：⭐️⭐️⭐️⭐️⭐️ 💥 错误表现#错误类型：逻辑错误 报错信息（原样粘贴）： 无编译错误，但程序在读取棋盘数据时判断条件异常，行为不符合预期。 🧪 出错代码#if (scanf(&#34;%d&#34;, &amp;board[i][j]) != 1) { // 错误处理 } ***🧠 错误原因（⚠️最重要）#根本原因：
+忘记在 scanf 参数后补上右括号 )，导致比较运算 != 1 被错误地放进了参数中。
+当时的错误想法：
+以为自己写的是“判断 scanf 返回值是否不等于 1”，没有意识到括号少写了一边。
+哪一步开始想歪了：
+在快速敲代码时默认相信“自己括号是成对的”，没有再用眼睛逐字符检查条件表达式。
+✅ 正确做法#if (scanf(&#34;%d&#34;, &amp;board[i][j]) != 1) { // 错误处理 } 关键点说明：#scanf 的返回值才应该和 1 作比较
+比较运算 一定写在函数调用外面
+少一个括号，代码仍然合法，但语义完全改变
+🚩 教训总结（一句话)#以后只要看到 scanf(...) != 1，立刻想到 先检查括号是否完整
+🔁 如何避免再次犯错#条件语句逐字符检查括号是否成对">
+  <meta itemprop="dateModified" content="2026-01-30T20:35:23+08:00">
+  <meta itemprop="wordCount" content="100">
+
+<title>Bug002 Input 逻辑 漏写右括号 判断条件错误 | 复利实验室</title>
+<link rel="icon" href="/forevertyp/forevertyp.github.io/favicon.png" >
+<link rel="manifest" href="/forevertyp/forevertyp.github.io/manifest.json">
+<link rel="canonical" href="http://localhost:1313/forevertyp/forevertyp.github.io/content.zh/posts/bug002-input-%E9%80%BB%E8%BE%91-%E6%BC%8F%E5%86%99%E5%8F%B3%E6%8B%AC%E5%8F%B7-%E5%88%A4%E6%96%AD%E6%9D%A1%E4%BB%B6%E9%94%99%E8%AF%AF/">
+<link rel="stylesheet" href="/forevertyp/forevertyp.github.io/book.min.cc2c524ed250aac81b23d1f4af87344917b325208841feca0968fe450f570575.css" integrity="sha256-zCxSTtJQqsgbI9H0r4c0SRezJSCIQf7KCWj&#43;RQ9XBXU=" crossorigin="anonymous">
+
+
+  <script defer src="/forevertyp/forevertyp.github.io/fuse.min.js"></script>
+  <script defer src="/forevertyp/forevertyp.github.io/en.search.min.cdebbde5aee08e0a5fb8cebd4ea8346efd41f479ac58bec99fba23d20b7ebac9.js" integrity="sha256-zeu95a7gjgpfuM69Tqg0bv1B9HmsWL7Jn7oj0gt&#43;usk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-content.zh">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/forevertyp/forevertyp.github.io/"><span>复利实验室</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ul><li><a href="/forevertyp/forevertyp.github.io/content.en/posts/" title="Blogs">Blogs</a></li></ul>
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/forevertyp/forevertyp.github.io/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Bug002 Input 逻辑 漏写右括号 判断条件错误</h3>
+
+  <label for="toc-control">
+    
+    <img src="/forevertyp/forevertyp.github.io/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-基本信息">📌 基本信息</a></li>
+    <li><a href="#-错误表现">💥 错误表现</a></li>
+    <li><a href="#-出错代码">🧪 出错代码</a></li>
+    <li><a href="#-错误原因最重要">🧠 错误原因（⚠️最重要）</a></li>
+    <li><a href="#-正确做法">✅ 正确做法</a></li>
+    <li><a href="#关键点说明"><strong>关键点说明：</strong></a></li>
+    <li><a href="#-教训总结一句话">🚩 教训总结（一句话)</a></li>
+    <li><a href="#-如何避免再次犯错">🔁 如何避免再次犯错</a></li>
+    <li><a href="#-相关-bug">🔗 相关 Bug</a>
+      <ul>
+        <li><a href="#-小评价说句真心话">🧠 小评价（说句真心话）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><hr>
+<h1 id="-bug-002">🐛 Bug 002<a class="anchor" href="#-bug-002">#</a></h1>
+<p>Input-逻辑-漏写右括号-scanf判断条件错误</p>
+<hr>
+<h2 id="-基本信息">📌 基本信息<a class="anchor" href="#-%e5%9f%ba%e6%9c%ac%e4%bf%a1%e6%81%af">#</a></h2>
+<ul>
+<li>日期：2026-01-26</li>
+<li>类型：#C语言 #Bug #逻辑错误</li>
+<li>场景：tic-tac-toe棋盘游戏</li>
+<li>难度感受：⭐️⭐️⭐️⭐️⭐️</li>
+</ul>
+<hr>
+<h2 id="-错误表现">💥 错误表现<a class="anchor" href="#-%e9%94%99%e8%af%af%e8%a1%a8%e7%8e%b0">#</a></h2>
+<ul>
+<li>错误类型：逻辑错误</li>
+<li>报错信息（原样粘贴）：
+无编译错误，但程序在读取棋盘数据时判断条件异常，行为不符合预期。</li>
+</ul>
+<hr>
+<h2 id="-出错代码">🧪 出错代码<a class="anchor" href="#-%e5%87%ba%e9%94%99%e4%bb%a3%e7%a0%81">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>board[i][j]) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1</span>) {           
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 错误处理
+</span></span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">***</span></span></span></code></pre></div><h2 id="-错误原因最重要">🧠 错误原因（⚠️最重要）<a class="anchor" href="#-%e9%94%99%e8%af%af%e5%8e%9f%e5%9b%a0%e6%9c%80%e9%87%8d%e8%a6%81">#</a></h2>
+<ul>
+<li>
+<p>根本原因：<br>
+忘记在 <code>scanf</code> 参数后补上右括号 <code>)</code>，导致比较运算 <code>!= 1</code> 被错误地放进了参数中。</p>
+</li>
+<li>
+<p>当时的错误想法：<br>
+以为自己写的是“判断 scanf 返回值是否不等于 1”，没有意识到括号少写了一边。</p>
+</li>
+<li>
+<p>哪一步开始想歪了：<br>
+在快速敲代码时默认相信“自己括号是成对的”，没有再用眼睛逐字符检查条件表达式。</p>
+</li>
+</ul>
+<hr>
+<h2 id="-正确做法">✅ 正确做法<a class="anchor" href="#-%e6%ad%a3%e7%a1%ae%e5%81%9a%e6%b3%95">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>board[i][j]) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 错误处理
+</span></span></span><span style="display:flex;"><span>}</span></span></code></pre></div><hr>
+<h2 id="关键点说明"><strong>关键点说明：</strong><a class="anchor" href="#%e5%85%b3%e9%94%ae%e7%82%b9%e8%af%b4%e6%98%8e">#</a></h2>
+<ul>
+<li>
+<p><code>scanf</code> 的返回值才应该和 <code>1</code> 作比较</p>
+</li>
+<li>
+<p>比较运算 <strong>一定写在函数调用外面</strong></p>
+</li>
+<li>
+<p>少一个括号，代码仍然合法，但语义完全改变</p>
+</li>
+</ul>
+<hr>
+<h2 id="-教训总结一句话">🚩 教训总结（一句话)<a class="anchor" href="#-%e6%95%99%e8%ae%ad%e6%80%bb%e7%bb%93%e4%b8%80%e5%8f%a5%e8%af%9d">#</a></h2>
+<blockquote class='book-hint '>
+<p>以后只要看到 <code>scanf(...) != 1</code>，立刻想到 <strong>先检查括号是否完整</strong></p>
+</blockquote><hr>
+<h2 id="-如何避免再次犯错">🔁 如何避免再次犯错<a class="anchor" href="#-%e5%a6%82%e4%bd%95%e9%81%bf%e5%85%8d%e5%86%8d%e6%ac%a1%e7%8a%af%e9%94%99">#</a></h2>
+<ul>
+<li>
+<p>条件语句逐字符检查括号是否成对</p>
+</li>
+<li>
+<p>对 <code>scanf / malloc / if</code> 等高风险语句放慢敲代码速度</p>
+</li>
+<li>
+<p>必要时拆成两行写，降低出错概率</p>
+</li>
+</ul>
+<hr>
+<h2 id="-相关-bug">🔗 相关 Bug<a class="anchor" href="#-%e7%9b%b8%e5%85%b3-bug">#</a></h2>
+<ul>
+<li>
+<p>逻辑-运算符优先级误判</p>
+</li>
+<li>
+<p>输入输出-返回值判断错误</p>
+</li>
+</ul>
+<hr>
+<h3 id="-小评价说句真心话">🧠 小评价（说句真心话）<a class="anchor" href="#-%e5%b0%8f%e8%af%84%e4%bb%b7%e8%af%b4%e5%8f%a5%e7%9c%9f%e5%bf%83%e8%af%9d">#</a></h3>
+<p>这个 Bug <strong>记得非常值</strong>，因为它属于：</p>
+<blockquote class='book-hint '>
+<p>❗<strong>不报错 + 看起来很对 + 后果很怪</strong></p>
+</blockquote><p>等你以后项目一大，这一类 Bug 会是主力杀手。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-基本信息">📌 基本信息</a></li>
+    <li><a href="#-错误表现">💥 错误表现</a></li>
+    <li><a href="#-出错代码">🧪 出错代码</a></li>
+    <li><a href="#-错误原因最重要">🧠 错误原因（⚠️最重要）</a></li>
+    <li><a href="#-正确做法">✅ 正确做法</a></li>
+    <li><a href="#关键点说明"><strong>关键点说明：</strong></a></li>
+    <li><a href="#-教训总结一句话">🚩 教训总结（一句话)</a></li>
+    <li><a href="#-如何避免再次犯错">🔁 如何避免再次犯错</a></li>
+    <li><a href="#-相关-bug">🔗 相关 Bug</a>
+      <ul>
+        <li><a href="#-小评价说句真心话">🧠 小评价（说句真心话）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+<head><script src="/forevertyp/forevertyp.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=forevertyp/forevertyp.github.io/livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Badges#Experimental, could change in the future or be removed
+Badges can be used to annotate your pages with additional information or mark specific places in markdown content.
+TitleValue Hugo0.147.6 BuildPassing Coverage25% Issues120
+Examples#Shortcode Output {{&lt; badge style=&#34;info&#34; title=&#34;hugo&#34; value=&#34;0.147.6&#34; &gt;}} Hugo0.147.6 {{&lt; badge style=&#34;success&#34; title=&#34;Build&#34; value=&#34;Passing&#34; &gt;}} BuildPassing {{&lt; badge style=&#34;warning&#34; title=&#34;Coverage&#34; value=&#34;25%&#34; &gt;}} Coverage25% {{&lt; badge style=&#34;danger&#34; title=&#34;Issues&#34; value=&#34;120&#34; &gt;}} Issues120 {{&lt; badge style=&#34;info&#34; title=&#34;Title&#34; &gt;}} Title {{&lt; badge style=&#34;info&#34; value=&#34;Value&#34; &gt;}} Value {{&lt; badge title=&#34;Default&#34; &gt;}} Default Use in links#A badge can be wrapped in markdown link producing following result: Hugo0.147.6
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/forevertyp/forevertyp.github.io/content.en/docs/shortcodes/experimental/badges/">
+  <meta property="og:site_name" content="复利实验室">
+  <meta property="og:title" content="复利实验室">
+  <meta property="og:description" content="Badges#Experimental, could change in the future or be removed
+Badges can be used to annotate your pages with additional information or mark specific places in markdown content.
+TitleValue Hugo0.147.6 BuildPassing Coverage25% Issues120
+Examples#Shortcode Output {{&lt; badge style=&#34;info&#34; title=&#34;hugo&#34; value=&#34;0.147.6&#34; &gt;}} Hugo0.147.6 {{&lt; badge style=&#34;success&#34; title=&#34;Build&#34; value=&#34;Passing&#34; &gt;}} BuildPassing {{&lt; badge style=&#34;warning&#34; title=&#34;Coverage&#34; value=&#34;25%&#34; &gt;}} Coverage25% {{&lt; badge style=&#34;danger&#34; title=&#34;Issues&#34; value=&#34;120&#34; &gt;}} Issues120 {{&lt; badge style=&#34;info&#34; title=&#34;Title&#34; &gt;}} Title {{&lt; badge style=&#34;info&#34; value=&#34;Value&#34; &gt;}} Value {{&lt; badge title=&#34;Default&#34; &gt;}} Default Use in links#A badge can be wrapped in markdown link producing following result: Hugo0.147.6">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="content.en">
+    <meta property="article:modified_time" content="2026-01-29T19:53:10+08:00">
+
+
+  <meta itemprop="name" content="复利实验室">
+  <meta itemprop="description" content="Badges#Experimental, could change in the future or be removed
+Badges can be used to annotate your pages with additional information or mark specific places in markdown content.
+TitleValue Hugo0.147.6 BuildPassing Coverage25% Issues120
+Examples#Shortcode Output {{&lt; badge style=&#34;info&#34; title=&#34;hugo&#34; value=&#34;0.147.6&#34; &gt;}} Hugo0.147.6 {{&lt; badge style=&#34;success&#34; title=&#34;Build&#34; value=&#34;Passing&#34; &gt;}} BuildPassing {{&lt; badge style=&#34;warning&#34; title=&#34;Coverage&#34; value=&#34;25%&#34; &gt;}} Coverage25% {{&lt; badge style=&#34;danger&#34; title=&#34;Issues&#34; value=&#34;120&#34; &gt;}} Issues120 {{&lt; badge style=&#34;info&#34; title=&#34;Title&#34; &gt;}} Title {{&lt; badge style=&#34;info&#34; value=&#34;Value&#34; &gt;}} Value {{&lt; badge title=&#34;Default&#34; &gt;}} Default Use in links#A badge can be wrapped in markdown link producing following result: Hugo0.147.6">
+  <meta itemprop="dateModified" content="2026-01-29T19:53:10+08:00">
+  <meta itemprop="wordCount" content="101">
+
+<title>Badges | 复利实验室</title>
+<link rel="icon" href="/forevertyp/forevertyp.github.io/favicon.png" >
+<link rel="manifest" href="/forevertyp/forevertyp.github.io/manifest.json">
+<link rel="canonical" href="http://localhost:1313/forevertyp/forevertyp.github.io/content.en/docs/shortcodes/experimental/badges/">
+<link rel="stylesheet" href="/forevertyp/forevertyp.github.io/book.min.cc2c524ed250aac81b23d1f4af87344917b325208841feca0968fe450f570575.css" integrity="sha256-zCxSTtJQqsgbI9H0r4c0SRezJSCIQf7KCWj&#43;RQ9XBXU=" crossorigin="anonymous">
+
+
+  <script defer src="/forevertyp/forevertyp.github.io/fuse.min.js"></script>
+  <script defer src="/forevertyp/forevertyp.github.io/en.search.min.cdebbde5aee08e0a5fb8cebd4ea8346efd41f479ac58bec99fba23d20b7ebac9.js" integrity="sha256-zeu95a7gjgpfuM69Tqg0bv1B9HmsWL7Jn7oj0gt&#43;usk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-content.en">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/forevertyp/forevertyp.github.io/"><span>复利实验室</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ul><li><a href="/forevertyp/forevertyp.github.io/content.en/posts/" title="Blogs">Blogs</a></li></ul>
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/forevertyp/forevertyp.github.io/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Badges</h3>
+
+  <label for="toc-control">
+    
+    <img src="/forevertyp/forevertyp.github.io/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#examples">Examples</a></li>
+    <li><a href="#use-in-links">Use in links</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="badges">Badges<a class="anchor" href="#badges">#</a></h1>
+<blockquote class='book-hint warning'>
+<p>Experimental, could change in the future or be removed</p></blockquote><p>Badges can be used to annotate your pages with additional information or mark specific places in markdown content.</p>
+<p><span class="book-badge default"><span class="book-badge-title">Title</span><span class="book-badge-value">Value</span></span>
+<span class="book-badge info"><span class="book-badge-title">Hugo</span><span class="book-badge-value">0.147.6</span></span>
+<span class="book-badge success"><span class="book-badge-title">Build</span><span class="book-badge-value">Passing</span></span>
+<span class="book-badge warning"><span class="book-badge-title">Coverage</span><span class="book-badge-value">25%</span></span>
+<span class="book-badge danger"><span class="book-badge-title">Issues</span><span class="book-badge-value">120</span></span></p>
+<h2 id="examples">Examples<a class="anchor" href="#examples">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Shortcode</th>
+          <th>Output</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>{{&lt; badge style=&quot;info&quot; title=&quot;hugo&quot; value=&quot;0.147.6&quot; &gt;}}</code></td>
+          <td><span class="book-badge info"><span class="book-badge-title">Hugo</span><span class="book-badge-value">0.147.6</span></span></td>
+      </tr>
+      <tr>
+          <td><code>{{&lt; badge style=&quot;success&quot; title=&quot;Build&quot; value=&quot;Passing&quot; &gt;}}</code></td>
+          <td><span class="book-badge success"><span class="book-badge-title">Build</span><span class="book-badge-value">Passing</span></span></td>
+      </tr>
+      <tr>
+          <td><code>{{&lt; badge style=&quot;warning&quot; title=&quot;Coverage&quot; value=&quot;25%&quot; &gt;}}</code></td>
+          <td><span class="book-badge warning"><span class="book-badge-title">Coverage</span><span class="book-badge-value">25%</span></span></td>
+      </tr>
+      <tr>
+          <td><code>{{&lt; badge style=&quot;danger&quot; title=&quot;Issues&quot; value=&quot;120&quot; &gt;}}</code></td>
+          <td><span class="book-badge danger"><span class="book-badge-title">Issues</span><span class="book-badge-value">120</span></span></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>{{&lt; badge style=&quot;info&quot; title=&quot;Title&quot; &gt;}}</code></td>
+          <td><span class="book-badge info"><span class="book-badge-title">Title</span></span></td>
+      </tr>
+      <tr>
+          <td><code>{{&lt; badge style=&quot;info&quot; value=&quot;Value&quot; &gt;}}</code></td>
+          <td><span class="book-badge info"><span class="book-badge-value">Value</span></span></td>
+      </tr>
+      <tr>
+          <td><code>{{&lt; badge title=&quot;Default&quot; &gt;}}</code></td>
+          <td><span class="book-badge default"><span class="book-badge-value">Default</span></span></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="use-in-links">Use in links<a class="anchor" href="#use-in-links">#</a></h2>
+<p>A badge can be wrapped in markdown link producing following result: <a href="https://github.com/gohugoio/hugo/releases/tag/v0.147.6"><span class="book-badge default"><span class="book-badge-title">Hugo</span><span class="book-badge-value">0.147.6</span></span></a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-tpl" data-lang="tpl"><span style="display:flex;"><span>[<span style="color:#75715e">{{</span><span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">badge</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Hugo&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0.147.6&#34;</span> <span style="color:#f92672">&gt;</span><span style="color:#75715e">}}</span>](https://github.com/gohugoio/hugo/releases/tag/v0.147.6)</span></span></code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#examples">Examples</a></li>
+    <li><a href="#use-in-links">Use in links</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

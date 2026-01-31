@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>复利实验室</title>
+    <link>http://localhost:1313/forevertyp/forevertyp.github.io/content.en/</link>
+    <description>Recent content on 复利实验室</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <atom:link href="http://localhost:1313/forevertyp/forevertyp.github.io/content.en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Showcases</title>
+      <link>http://localhost:1313/forevertyp/forevertyp.github.io/content.en/showcases/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/forevertyp/forevertyp.github.io/content.en/showcases/</guid>
+      <description>&lt;div class=&#34;book-hero text-center&#34;&gt;&#xD;&#xA;&lt;h1 id=&#34;at-the-moment-this-page-is-empty&#34;&gt;At the moment this page is empty&lt;a class=&#34;anchor&#34; href=&#34;#at-the-moment-this-page-is-empty&#34;&gt;#&lt;/a&gt;&lt;/h1&gt;&#xD;&#xA;&lt;div&gt;</description>
+    </item>
+  </channel>
+</rss>
