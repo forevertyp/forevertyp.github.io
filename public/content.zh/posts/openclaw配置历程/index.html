@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+<head><script src="/forevertyp/forevertyp.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=forevertyp/forevertyp.github.io/livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="OpenClaw 配置指北：从安装到解决 API 限速的完整记录#日期：2026-02-24
+标签：OpenClaw, Telegram, AI, 阿里云, 配置教程
+最近发现了一个很有意思的开源项目——OpenClaw。它是一个能让你把 AI 接入各种聊天平台（Telegram、飞书等）的网关，而且支持丰富的“技能”（Skills），相当于给 AI 装上了各种插件。作为一个喜欢折腾的人，我决定把它跑起来，让它成为我的私人助手。但这个过程……嗯，有点曲折。好在最后成功了，现在把经验分享给大家，希望能帮你少踩坑。
+一、从零开始安装#1.1 环境准备#OpenClaw 基于 Node.js，需要 22 以上的版本。我直接去 Node.js官网 下载了最新版，一路“下一步”装好。
+1.2 安装 OpenClaw#官方推荐用 PowerShell 执行安装脚本：
+iwr -useb https://openclaw.ai/install.ps1 | iex结果第一次就报错了：
+iex : 无法加载文件 ...，因为在此系统上禁止运行脚本。这是因为 PowerShell 默认禁止运行脚本。解决办法：以管理员身份打开 PowerShell，先放宽策略：
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser再运行安装命令，成功！
+1.3 配置向导#安装完会自动进入配置向导（onboard）。它会问你几个问题：
+选择 QuickStart。 选择 AI 模型提供商：我选了 Qwen（通义千问），因为国内访问快，而且有免费额度。 选择聊天平台：我选了 Telegram，因为它配置简单。 二、Telegram 机器人的配置#2.1 获取 Bot Token#在 Telegram 里找到 @BotFather，发送 /newbot，按提示创建机器人，最后会得到一串 Token，比如 123456:ABCdef...。把它复制下来。
+2.2 填入 Token#在向导中把 Token 粘贴进去，它就会自动完成配置。但等等，机器人没反应？打开日志一看，全是：
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/forevertyp/forevertyp.github.io/content.zh/posts/openclaw%E9%85%8D%E7%BD%AE%E5%8E%86%E7%A8%8B/">
+  <meta property="og:site_name" content="复利实验室">
+  <meta property="og:title" content="复利实验室">
+  <meta property="og:description" content="OpenClaw 配置指北：从安装到解决 API 限速的完整记录#日期：2026-02-24
+标签：OpenClaw, Telegram, AI, 阿里云, 配置教程
+最近发现了一个很有意思的开源项目——OpenClaw。它是一个能让你把 AI 接入各种聊天平台（Telegram、飞书等）的网关，而且支持丰富的“技能”（Skills），相当于给 AI 装上了各种插件。作为一个喜欢折腾的人，我决定把它跑起来，让它成为我的私人助手。但这个过程……嗯，有点曲折。好在最后成功了，现在把经验分享给大家，希望能帮你少踩坑。
+一、从零开始安装#1.1 环境准备#OpenClaw 基于 Node.js，需要 22 以上的版本。我直接去 Node.js官网 下载了最新版，一路“下一步”装好。
+1.2 安装 OpenClaw#官方推荐用 PowerShell 执行安装脚本：
+iwr -useb https://openclaw.ai/install.ps1 | iex结果第一次就报错了：
+iex : 无法加载文件 ...，因为在此系统上禁止运行脚本。这是因为 PowerShell 默认禁止运行脚本。解决办法：以管理员身份打开 PowerShell，先放宽策略：
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser再运行安装命令，成功！
+1.3 配置向导#安装完会自动进入配置向导（onboard）。它会问你几个问题：
+选择 QuickStart。 选择 AI 模型提供商：我选了 Qwen（通义千问），因为国内访问快，而且有免费额度。 选择聊天平台：我选了 Telegram，因为它配置简单。 二、Telegram 机器人的配置#2.1 获取 Bot Token#在 Telegram 里找到 @BotFather，发送 /newbot，按提示创建机器人，最后会得到一串 Token，比如 123456:ABCdef...。把它复制下来。
+2.2 填入 Token#在向导中把 Token 粘贴进去，它就会自动完成配置。但等等，机器人没反应？打开日志一看，全是：">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="content.zh">
+    <meta property="article:modified_time" content="2026-02-24T21:57:41+08:00">
+
+
+  <meta itemprop="name" content="复利实验室">
+  <meta itemprop="description" content="OpenClaw 配置指北：从安装到解决 API 限速的完整记录#日期：2026-02-24
+标签：OpenClaw, Telegram, AI, 阿里云, 配置教程
+最近发现了一个很有意思的开源项目——OpenClaw。它是一个能让你把 AI 接入各种聊天平台（Telegram、飞书等）的网关，而且支持丰富的“技能”（Skills），相当于给 AI 装上了各种插件。作为一个喜欢折腾的人，我决定把它跑起来，让它成为我的私人助手。但这个过程……嗯，有点曲折。好在最后成功了，现在把经验分享给大家，希望能帮你少踩坑。
+一、从零开始安装#1.1 环境准备#OpenClaw 基于 Node.js，需要 22 以上的版本。我直接去 Node.js官网 下载了最新版，一路“下一步”装好。
+1.2 安装 OpenClaw#官方推荐用 PowerShell 执行安装脚本：
+iwr -useb https://openclaw.ai/install.ps1 | iex结果第一次就报错了：
+iex : 无法加载文件 ...，因为在此系统上禁止运行脚本。这是因为 PowerShell 默认禁止运行脚本。解决办法：以管理员身份打开 PowerShell，先放宽策略：
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser再运行安装命令，成功！
+1.3 配置向导#安装完会自动进入配置向导（onboard）。它会问你几个问题：
+选择 QuickStart。 选择 AI 模型提供商：我选了 Qwen（通义千问），因为国内访问快，而且有免费额度。 选择聊天平台：我选了 Telegram，因为它配置简单。 二、Telegram 机器人的配置#2.1 获取 Bot Token#在 Telegram 里找到 @BotFather，发送 /newbot，按提示创建机器人，最后会得到一串 Token，比如 123456:ABCdef...。把它复制下来。
+2.2 填入 Token#在向导中把 Token 粘贴进去，它就会自动完成配置。但等等，机器人没反应？打开日志一看，全是：">
+  <meta itemprop="dateModified" content="2026-02-24T21:57:41+08:00">
+  <meta itemprop="wordCount" content="310">
+
+<title>Openclaw配置历程 | 复利实验室</title>
+<link rel="icon" href="/forevertyp/forevertyp.github.io/favicon.png" >
+<link rel="manifest" href="/forevertyp/forevertyp.github.io/manifest.json">
+<link rel="canonical" href="http://localhost:1313/forevertyp/forevertyp.github.io/content.zh/posts/openclaw%E9%85%8D%E7%BD%AE%E5%8E%86%E7%A8%8B/">
+<link rel="stylesheet" href="/forevertyp/forevertyp.github.io/book.min.cc2c524ed250aac81b23d1f4af87344917b325208841feca0968fe450f570575.css" integrity="sha256-zCxSTtJQqsgbI9H0r4c0SRezJSCIQf7KCWj&#43;RQ9XBXU=" crossorigin="anonymous">
+
+
+  <script defer src="/forevertyp/forevertyp.github.io/fuse.min.js"></script>
+  <script defer src="/forevertyp/forevertyp.github.io/en.search.min.1cf0e8b13c0dd37c68bf12ca276af28531a7f584aac42da5d23835813eebfe8d.js" integrity="sha256-HPDosTwN03xovxLKJ2ryhTGn9YSqxC2l0jg1gT7r/o0=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-content.zh">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/forevertyp/forevertyp.github.io/"><span>复利实验室</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ul><li><a href="/forevertyp/forevertyp.github.io/content.en/posts/" title="Blogs">Blogs</a></li></ul>
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/forevertyp/forevertyp.github.io/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Openclaw配置历程</h3>
+
+  <label for="toc-control">
+    
+    <img src="/forevertyp/forevertyp.github.io/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#一从零开始安装">一、从零开始安装</a>
+      <ul>
+        <li><a href="#11-环境准备">1.1 环境准备</a></li>
+        <li><a href="#12-安装-openclaw">1.2 安装 OpenClaw</a></li>
+        <li><a href="#13-配置向导">1.3 配置向导</a></li>
+      </ul>
+    </li>
+    <li><a href="#二telegram-机器人的配置">二、Telegram 机器人的配置</a>
+      <ul>
+        <li><a href="#21-获取-bot-token">2.1 获取 Bot Token</a></li>
+        <li><a href="#22-填入-token">2.2 填入 Token</a></li>
+        <li><a href="#23-设置代理">2.3 设置代理</a></li>
+      </ul>
+    </li>
+    <li><a href="#三第一次对话配对授权">三、第一次对话：配对授权</a></li>
+    <li><a href="#四突然的打击api-rate-limit">四、突然的打击：API rate limit</a></li>
+    <li><a href="#五换用阿里云百炼官方-api">五、换用阿里云百炼官方 API</a>
+      <ul>
+        <li><a href="#51-获取阿里云-api-key">5.1 获取阿里云 API Key</a></li>
+        <li><a href="#52-修改-openclaw-配置">5.2 修改 OpenClaw 配置</a></li>
+        <li><a href="#53-重启生效">5.3 重启生效</a></li>
+      </ul>
+    </li>
+    <li><a href="#六记忆系统的小插曲">六、记忆系统的小插曲</a></li>
+    <li><a href="#七最终成果">七、最终成果</a></li>
+    <li><a href="#八经验总结">八、经验总结</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="openclaw-配置指北从安装到解决-api-限速的完整记录">OpenClaw 配置指北：从安装到解决 API 限速的完整记录<a class="anchor" href="#openclaw-%e9%85%8d%e7%bd%ae%e6%8c%87%e5%8c%97%e4%bb%8e%e5%ae%89%e8%a3%85%e5%88%b0%e8%a7%a3%e5%86%b3-api-%e9%99%90%e9%80%9f%e7%9a%84%e5%ae%8c%e6%95%b4%e8%ae%b0%e5%bd%95">#</a></h1>
+<p><strong>日期</strong>：2026-02-24<br>
+<strong>标签</strong>：OpenClaw, Telegram, AI, 阿里云, 配置教程</p>
+<p>最近发现了一个很有意思的开源项目——<strong>OpenClaw</strong>。它是一个能让你把 AI 接入各种聊天平台（Telegram、飞书等）的网关，而且支持丰富的“技能”（Skills），相当于给 AI 装上了各种插件。作为一个喜欢折腾的人，我决定把它跑起来，让它成为我的私人助手。但这个过程……嗯，有点曲折。好在最后成功了，现在把经验分享给大家，希望能帮你少踩坑。</p>
+<h2 id="一从零开始安装">一、从零开始安装<a class="anchor" href="#%e4%b8%80%e4%bb%8e%e9%9b%b6%e5%bc%80%e5%a7%8b%e5%ae%89%e8%a3%85">#</a></h2>
+<h3 id="11-环境准备">1.1 环境准备<a class="anchor" href="#11-%e7%8e%af%e5%a2%83%e5%87%86%e5%a4%87">#</a></h3>
+<p>OpenClaw 基于 Node.js，需要 22 以上的版本。我直接去 <a href="https://nodejs.org/">Node.js官网</a> 下载了最新版，一路“下一步”装好。</p>
+<h3 id="12-安装-openclaw">1.2 安装 OpenClaw<a class="anchor" href="#12-%e5%ae%89%e8%a3%85-openclaw">#</a></h3>
+<p>官方推荐用 PowerShell 执行安装脚本：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>iwr -useb https<span style="color:#960050;background-color:#1e0010">:</span>//openclaw.ai/install.ps1 | iex</span></span></code></pre></div><p>结果第一次就报错了：</p>
+<pre tabindex="0"><code>iex : 无法加载文件 ...，因为在此系统上禁止运行脚本。</code></pre><p>这是因为 PowerShell 默认禁止运行脚本。解决办法：<strong>以管理员身份打开 PowerShell</strong>，先放宽策略：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</span></span></code></pre></div><p>再运行安装命令，成功！</p>
+<h3 id="13-配置向导">1.3 配置向导<a class="anchor" href="#13-%e9%85%8d%e7%bd%ae%e5%90%91%e5%af%bc">#</a></h3>
+<p>安装完会自动进入配置向导（<code>onboard</code>）。它会问你几个问题：</p>
+<ul>
+<li>选择 <strong>QuickStart</strong>。</li>
+<li>选择 AI 模型提供商：我选了 <strong>Qwen</strong>（通义千问），因为国内访问快，而且有免费额度。</li>
+<li>选择聊天平台：我选了 <strong>Telegram</strong>，因为它配置简单。</li>
+</ul>
+<h2 id="二telegram-机器人的配置">二、Telegram 机器人的配置<a class="anchor" href="#%e4%ba%8ctelegram-%e6%9c%ba%e5%99%a8%e4%ba%ba%e7%9a%84%e9%85%8d%e7%bd%ae">#</a></h2>
+<h3 id="21-获取-bot-token">2.1 获取 Bot Token<a class="anchor" href="#21-%e8%8e%b7%e5%8f%96-bot-token">#</a></h3>
+<p>在 Telegram 里找到 <strong>@BotFather</strong>，发送 <code>/newbot</code>，按提示创建机器人，最后会得到一串 Token，比如 <code>123456:ABCdef...</code>。把它复制下来。</p>
+<h3 id="22-填入-token">2.2 填入 Token<a class="anchor" href="#22-%e5%a1%ab%e5%85%a5-token">#</a></h3>
+<p>在向导中把 Token 粘贴进去，它就会自动完成配置。但等等，机器人没反应？打开日志一看，全是：</p>
+<pre tabindex="0"><code>[telegram] setMyCommands failed: Network request for &#39;setMyCommands&#39; failed!</code></pre><p><strong>原因</strong>：Telegram API 在国内被墙了。需要给 OpenClaw 设置代理。</p>
+<h3 id="23-设置代理">2.3 设置代理<a class="anchor" href="#23-%e8%ae%be%e7%bd%ae%e4%bb%a3%e7%90%86">#</a></h3>
+<p>我的电脑上开着 Clash（端口 7890），所以在启动 OpenClaw 之前，先设置环境变量：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$env:HTTP_PROXY=<span style="color:#e6db74">&#34;http://127.0.0.1:7890&#34;</span>
+</span></span><span style="display:flex;"><span>$env:HTTPS_PROXY=<span style="color:#e6db74">&#34;http://127.0.0.1:7890&#34;</span></span></span></code></pre></div><p>然后重新运行 <code>openclaw gateway</code>，日志中终于出现了：</p>
+<pre tabindex="0"><code>[telegram] setMyCommands succeeded
+[telegram] polling started</code></pre><p>太好了，机器人上线了！</p>
+<h2 id="三第一次对话配对授权">三、第一次对话：配对授权<a class="anchor" href="#%e4%b8%89%e7%ac%ac%e4%b8%80%e6%ac%a1%e5%af%b9%e8%af%9d%e9%85%8d%e5%af%b9%e6%8e%88%e6%9d%83">#</a></h2>
+<p>给机器人发消息，它却回复：</p>
+<pre tabindex="0"><code>OpenClaw: access not configured. Your Telegram user id: 7650264057
+Pairing code: M67FM3NS
+Ask the bot owner to approve with: openclaw pairing approve telegram M67FM3NS</code></pre><p>原来默认的私聊策略是 <code>pairing</code>，需要手动授权。执行命令：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>openclaw pairing approve telegram M67FM3NS</span></span></code></pre></div><p>再发消息，机器人终于回复了！🎉</p>
+<h2 id="四突然的打击api-rate-limit">四、突然的打击：API rate limit<a class="anchor" href="#%e5%9b%9b%e7%aa%81%e7%84%b6%e7%9a%84%e6%89%93%e5%87%bbapi-rate-limit">#</a></h2>
+<p>正当我准备和机器人畅聊时，它突然回了一句：</p>
+<pre tabindex="0"><code>⚠️ API rate limit reached. Please try again later.</code></pre><p>What？我才聊了几句啊！查了一下，原来我用的 Qwen 是 OpenClaw 内置的 <strong><code>qwen-portal</code> 公共网关</strong>，有严格的频率限制（毕竟大家共享）。要彻底解决，必须换成自己的阿里云百炼 API。</p>
+<h2 id="五换用阿里云百炼官方-api">五、换用阿里云百炼官方 API<a class="anchor" href="#%e4%ba%94%e6%8d%a2%e7%94%a8%e9%98%bf%e9%87%8c%e4%ba%91%e7%99%be%e7%82%bc%e5%ae%98%e6%96%b9-api">#</a></h2>
+<h3 id="51-获取阿里云-api-key">5.1 获取阿里云 API Key<a class="anchor" href="#51-%e8%8e%b7%e5%8f%96%e9%98%bf%e9%87%8c%e4%ba%91-api-key">#</a></h3>
+<p>登录 <a href="https://bailian.console.aliyun.com/">阿里云百炼控制台</a>，在“API-KEY管理”里创建一个新的 Key。注意：新用户会有免费额度，即使需要付费，价格也极低（0.0025元/千 tokens），我的账户里充了 2 块钱，够用好几年。</p>
+<h3 id="52-修改-openclaw-配置">5.2 修改 OpenClaw 配置<a class="anchor" href="#52-%e4%bf%ae%e6%94%b9-openclaw-%e9%85%8d%e7%bd%ae">#</a></h3>
+<p>OpenClaw 的配置文件在 <code>~/.openclaw/openclaw.json</code>。我们需要添加一个新的模型提供商 <code>dashscope</code>（阿里云百炼的官方 API 地址），并修改默认模型。</p>
+<p>最终配置如下（敏感信息已隐藏）：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;models&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;providers&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;qwen-portal&#34;</span>: { <span style="color:#960050;background-color:#1e0010">...</span> }, <span style="color:#75715e">// 原有的保留
+</span></span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;dashscope&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;baseUrl&#34;</span>: <span style="color:#e6db74">&#34;https://dashscope.aliyuncs.com/compatible-mode/v1&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;apiKey&#34;</span>: <span style="color:#e6db74">&#34;sk-你的完整Key&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;api&#34;</span>: <span style="color:#e6db74">&#34;openai-completions&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;models&#34;</span>: [
+</span></span><span style="display:flex;"><span>          { <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;qwen-plus&#34;</span>, <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Qwen Plus&#34;</span>, <span style="color:#960050;background-color:#1e0010">...</span> },
+</span></span><span style="display:flex;"><span>          { <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;qwen-max&#34;</span>, <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Qwen Max&#34;</span>, <span style="color:#960050;background-color:#1e0010">...</span> }
+</span></span><span style="display:flex;"><span>        ]
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;agents&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;defaults&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;model&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;primary&#34;</span>: <span style="color:#e6db74">&#34;dashscope/qwen-plus&#34;</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>注意：<code>baseUrl</code> 一定要用 <code>compatible-mode/v1</code>，因为 OpenClaw 使用的是 OpenAI 兼容接口。</p>
+<h3 id="53-重启生效">5.3 重启生效<a class="anchor" href="#53-%e9%87%8d%e5%90%af%e7%94%9f%e6%95%88">#</a></h3>
+<p>保存文件，重启 gateway：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>openclaw gateway</span></span></code></pre></div><p>日志显示 <code>agent model: dashscope/qwen-plus</code>，说明配置成功。</p>
+<h2 id="六记忆系统的小插曲">六、记忆系统的小插曲<a class="anchor" href="#%e5%85%ad%e8%ae%b0%e5%bf%86%e7%b3%bb%e7%bb%9f%e7%9a%84%e5%b0%8f%e6%8f%92%e6%9b%b2">#</a></h2>
+<p>为了进一步减少 token 消耗，我打算启用 OpenClaw 的记忆系统（可以自动管理上下文，避免每次对话都发全部历史）。配置里加了：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;memory&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> { <span style="color:#f92672">&#34;backend&#34;</span>: <span style="color:#e6db74">&#34;memory-basic&#34;</span> }</span></span></code></pre></div><p>结果启动时报错：</p>
+<pre tabindex="0"><code>Config invalid: memory.backend: Invalid input</code></pre><p>试了几个名字（<code>basic</code>、<code>file</code>、<code>memory</code>）都不行，可能当前版本不支持？暂时删掉这块，反正换了官方 API 后限速问题已经消失了，记忆功能等以后研究清楚了再加。</p>
+<h2 id="七最终成果">七、最终成果<a class="anchor" href="#%e4%b8%83%e6%9c%80%e7%bb%88%e6%88%90%e6%9e%9c">#</a></h2>
+<p>现在，我的 Telegram 机器人已经稳定运行了好几天，再也没有遇到 rate limit。它不仅能聊天，还能通过安装各种技能（比如 GitHub 操作、PDF 处理）帮我做很多事情。更重要的是，整个过程让我对 OpenClaw 的架构和配置有了深刻理解。</p>
+<h2 id="八经验总结">八、经验总结<a class="anchor" href="#%e5%85%ab%e7%bb%8f%e9%aa%8c%e6%80%bb%e7%bb%93">#</a></h2>
+<ol>
+<li><strong>网络问题是第一关</strong>：在国内使用 Telegram 机器人，必须配置代理，而且要让 OpenClaw 的 gateway 继承代理环境变量。</li>
+<li><strong>不要用公共网关</strong>：<code>qwen-portal</code> 虽然方便，但限速严格。换成自己的 API 才是长久之计。</li>
+<li><strong>配置文件手动修改更可靠</strong>：OpenClaw 的 <code>config set</code> 命令有时会找不到路径，直接编辑 JSON 文件最保险。</li>
+<li><strong>阿里云百炼是个好选择</strong>：价格便宜，配额高，兼容 OpenAI 接口，接入简单。</li>
+<li><strong>遇到问题看日志</strong>：OpenClaw 的日志很详细，基本上所有问题都能从日志里找到线索。</li>
+</ol>
+<p>如果你也想拥有一个自己的 AI 助手，不妨试试 OpenClaw。虽然配置过程有点折腾，但成功后的成就感也是满满的。如果遇到问题，欢迎在评论区交流，我会尽力帮忙。</p>
+<hr>
+<p><strong>（本文所有 API Key、Token 均已打码，请勿直接使用）</strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#一从零开始安装">一、从零开始安装</a>
+      <ul>
+        <li><a href="#11-环境准备">1.1 环境准备</a></li>
+        <li><a href="#12-安装-openclaw">1.2 安装 OpenClaw</a></li>
+        <li><a href="#13-配置向导">1.3 配置向导</a></li>
+      </ul>
+    </li>
+    <li><a href="#二telegram-机器人的配置">二、Telegram 机器人的配置</a>
+      <ul>
+        <li><a href="#21-获取-bot-token">2.1 获取 Bot Token</a></li>
+        <li><a href="#22-填入-token">2.2 填入 Token</a></li>
+        <li><a href="#23-设置代理">2.3 设置代理</a></li>
+      </ul>
+    </li>
+    <li><a href="#三第一次对话配对授权">三、第一次对话：配对授权</a></li>
+    <li><a href="#四突然的打击api-rate-limit">四、突然的打击：API rate limit</a></li>
+    <li><a href="#五换用阿里云百炼官方-api">五、换用阿里云百炼官方 API</a>
+      <ul>
+        <li><a href="#51-获取阿里云-api-key">5.1 获取阿里云 API Key</a></li>
+        <li><a href="#52-修改-openclaw-配置">5.2 修改 OpenClaw 配置</a></li>
+        <li><a href="#53-重启生效">5.3 重启生效</a></li>
+      </ul>
+    </li>
+    <li><a href="#六记忆系统的小插曲">六、记忆系统的小插曲</a></li>
+    <li><a href="#七最终成果">七、最终成果</a></li>
+    <li><a href="#八经验总结">八、经验总结</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
